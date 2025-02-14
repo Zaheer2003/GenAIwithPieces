@@ -39,31 +39,34 @@
 <body>
     <div class="container">
         <h1>Fun Facts Generator</h1>
-        <input type="text" id="topic" placeholder="Enter a topic (e.g., space, animals)">
         <button onclick="generateFact()">Get Fun Fact</button>
+        <button onclick="generateAnotherFact()">Generate Another Fun Fact</button>
         <p class="fact" id="fact"></p>
     </div>
 
     <script>
-        async function generateFact() {
-            const topic = document.getElementById("topic").value.trim();
-            if (!topic) {
-                alert("Please enter a topic!");
-                return;
-            }
-
-            const prompt = `Give me a fun fact about ${topic}. Make sure it is accurate and verified.`;
-            
-            // Simulating AI response with predefined facts (replace with real AI API if available)
-            const facts = {
-                "space": "Did you know that a day on Venus is longer than a year on Venus?",
-                "animals": "Octopuses have three hearts and their blood is blue!",
-                "history": "Napoleon was once attacked by a horde of bunnies!",
-                "science": "Bananas are berries, but strawberries aren’t!"
-            };
-            
-            const fact = facts[topic.toLowerCase()] || "Sorry, I couldn't find a fun fact about that topic!";
-            document.getElementById("fact").innerText = fact;
+        const facts = [
+            "Did you know that a day on Venus is longer than a year on Venus?",
+            "Neutron stars are so dense that a sugar-cube-sized amount of material would weigh a billion tons!",
+            "Jupiter has the biggest ocean of any planet in our solar system – and it’s made of hydrogen!",
+            "Octopuses have three hearts and their blood is blue!",
+            "A shrimp's heart is in its head!",
+            "Sloths can hold their breath longer than dolphins can!",
+            "Napoleon was once attacked by a horde of bunnies!",
+            "Ancient Egyptians used honey as a wound dressing and even as an offering to the gods!",
+            "The Eiffel Tower can be 15 cm taller during the summer due to thermal expansion!",
+            "Bananas are berries, but strawberries aren’t!",
+            "Water can boil and freeze at the same time, a phenomenon known as the triple point!",
+            "The speed of a computer mouse is measured in 'Mickeys'!"
+        ];
+        
+        function generateFact() {
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+            document.getElementById("fact").innerText = randomFact;
+        }
+        
+        function generateAnotherFact() {
+            generateFact();
         }
     </script>
 </body>
