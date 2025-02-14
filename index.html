@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +7,10 @@
     <title>Fun Facts Generator</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             text-align: center;
             margin: 50px;
+            background-color: #f4f4f9;
         }
         .container {
             max-width: 600px;
@@ -16,6 +18,7 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
         }
         button {
             padding: 10px 20px;
@@ -40,33 +43,24 @@
     <div class="container">
         <h1>Fun Facts Generator</h1>
         <button onclick="generateFact()">Get Fun Fact</button>
-        <button onclick="generateAnotherFact()">Generate Another Fun Fact</button>
         <p class="fact" id="fact"></p>
     </div>
-
     <script>
         const facts = [
             "Did you know that a day on Venus is longer than a year on Venus?",
             "Neutron stars are so dense that a sugar-cube-sized amount of material would weigh a billion tons!",
-            "Jupiter has the biggest ocean of any planet in our solar system – and it’s made of hydrogen!",
+            "Jupiter has the biggest ocean of any planet in our solar system — and it's made of hydrogen!",
             "Octopuses have three hearts and their blood is blue!",
-            "A shrimp's heart is in its head!",
-            "Sloths can hold their breath longer than dolphins can!",
-            "Napoleon was once attacked by a horde of bunnies!",
             "Ancient Egyptians used honey as a wound dressing and even as an offering to the gods!",
             "The Eiffel Tower can be 15 cm taller during the summer due to thermal expansion!",
-            "Bananas are berries, but strawberries aren’t!",
+            "Bananas are berries, but strawberries aren't!",
             "Water can boil and freeze at the same time, a phenomenon known as the triple point!",
             "The speed of a computer mouse is measured in 'Mickeys'!"
         ];
-        
+
         function generateFact() {
             const randomFact = facts[Math.floor(Math.random() * facts.length)];
-            document.getElementById("fact").innerText = randomFact;
-        }
-        
-        function generateAnotherFact() {
-            generateFact();
+            document.getElementById('fact').innerText = randomFact;
         }
     </script>
 </body>
